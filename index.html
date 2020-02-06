@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="lista_elevi_wrapper">
+        <h1>Lista elevi</h1>
+        <div class="zone1">
+            <form>
+                <input type="text" placeholder="Nume Elev">
+                <input type="submit" value="Adauga">
+            </form>
+        </div>
+        <div class="zone2">
+            <button onclick="sortAsc()">Sort Asc</button>
+            <button onclick="sortDesc()">Sort Desc</button>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Nume</td>
+                        <td>Medie</td>
+                        <td>Vezi Notele</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td></td>
+                    <td></td>
+                    <td><button onclick="show()">Detalii</button></td>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div id="note_elev_wrapper">
+        <button onclick="hide()">Ascunde</button>
+        <h1>Numele elevului</h1>
+        <div class="zone3">
+        <form>
+            <input type="number">
+            <input type="submit" value="Adauga Nota">
+        </form>
+        </div>
+        <div class="zone4">
+        <table>
+            <thead>
+                <td>Note</td>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
