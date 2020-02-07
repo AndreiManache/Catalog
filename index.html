@@ -8,18 +8,23 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
     <div id="lista_elevi_wrapper">
+
         <h1>Lista elevi</h1>
+
         <div class="zone1">
-            <form>
-                <input type="text" placeholder="Nume Elev">
+            <form onsubmit="onClickAddElev(event)">
+                <input type="text" placeholder="Nume Elev" id='numeElev'>
                 <input type="submit" value="Adauga">
             </form>
         </div>
+
+
         <div class="zone2">
             <button onclick="sortAsc()">Sort Asc</button>
             <button onclick="sortDesc()">Sort Desc</button>
-            <table>
+            <table id="tabel">
                 <thead>
                     <tr>
                         <td>Nume</td>
@@ -28,30 +33,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <td></td>
-                    <td></td>
-                    <td><button onclick="show()">Detalii</button></td>
                 </tbody>
             </table>
         </div>
         
     </div>
-    <div id="note_elev_wrapper">
-        <button onclick="hide()">Ascunde</button>
+
+    <div id="note_elev_wrapper" class="hide">
+        <button id="ascunde" onclick="hide()">Ascunde</button>
         <h1>Numele elevului</h1>
         <div class="zone3">
         <form>
-            <input type="number">
+            <input type="number" placeholder="Nota">
             <input type="submit" value="Adauga Nota">
         </form>
         </div>
         <div class="zone4">
-        <table>
+        <table id="tabel2">
             <thead>
                 <td>Note</td>
             </thead>
             <tbody>
-
             </tbody>
         </table>
         </div>
@@ -59,3 +61,4 @@
     <script src="./script.js"></script>
 </body>
 </html>
+
