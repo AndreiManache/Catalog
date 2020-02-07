@@ -40,14 +40,18 @@
     </div>
 
     <div id="note_elev_wrapper" class="hide">
+
         <button id="ascunde" onclick="hide()">Ascunde</button>
+
         <h1>Numele elevului</h1>
+
         <div class="zone3">
-        <form>
+        <form onsubmit="onClickAddNota(event)">
             <input type="number" placeholder="Nota">
             <input type="submit" value="Adauga Nota">
         </form>
         </div>
+
         <div class="zone4">
         <table id="tabel2">
             <thead>
@@ -57,6 +61,7 @@
             </tbody>
         </table>
         </div>
+
     </div>
     <script src="./script.js"></script>
 </body>
