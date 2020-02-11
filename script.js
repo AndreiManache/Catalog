@@ -57,13 +57,17 @@ var catalog = new Catalog();
 
 
     function onClickAddElev(e){
-
         e.preventDefault()
 
+            if(elev === ""){
+             document.querySelector("#numeElev").classList.add("invalid");
+            }
+        
             var elev = document.querySelector("#numeElev").value;
             catalog.addElev(elev);
+           
             drawElevi()
-
+                
             document.querySelector("#numeElev").value = "";
 
         }
