@@ -1,10 +1,8 @@
-
-
-
 function hide(){
     document.getElementById('note_elev_wrapper').classList.add("hide");
     document.querySelector('body').style.gridTemplateColumns="auto";
 }
+
 
         class Elev{
                 constructor(nume){
@@ -18,16 +16,11 @@ function hide(){
 
                 get medie(){
                     let sum = 0;
-                    for(let i=0 ; i<this.note.length ; i++){
-                        sum+= this.note[i];
-                        }
-
-                        if(this.note.length === 0){
-                            return "";
-                        }
-
-                        return sum/this.note.length ;
+                    if(this.note === []){
+                        return "";
                     }
+                    return sum;
+                }
                 
 
             }
@@ -35,7 +28,6 @@ function hide(){
         class Catalog{
                 constructor(){
                     this.elevi=[];
-
                 }
 
                 addElev(str){
@@ -82,6 +74,7 @@ var catalog = new Catalog();
             document.querySelector('body').style.gridTemplateColumns="50% auto";
 
             drawElevi();
+            drawNote();
 
         }
 
@@ -94,6 +87,10 @@ var catalog = new Catalog();
         catalog.addNota(nota)
 
         drawNote();
+
+        document.querySelector('.zone3 input').value = "";
+
+        drawElevi();
         
     }
 
@@ -106,7 +103,7 @@ var catalog = new Catalog();
                 str+=`
                 <tr>
                     <td>${elev.nume}</td>
-                    <td></td>
+                    <td>${elev.medie}</td>
                     <td><button class="btnNote" onclick="onClickVeziNote(${i})">Detalii</button></td>
                 </tr>
                 `
