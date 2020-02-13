@@ -50,6 +50,29 @@ function hide(){
                 addNota(str){
                     this.elevAscultat.adaugaNota(str);
                 }
+                sortAsc(){
+                    this.elevi.sort(function(a,b){
+                       return  b.medie - a.medie
+                    })
+                }
+                sortDesc(){
+                    this.elevi.sort(function(a,b){
+                       return  a.medie - b.medie
+                    })
+                }
+
+                sortNoteAsc(){
+                    this.elevAscultat.note.sort(function(a,b){
+                        return  b - a
+                     })
+                }
+                sortNoteDesc(){
+                    this.elevAscultat.note.sort(function(a,b){
+                        return  a - b
+                     })
+                }
+
+
             }
 
 var catalog = new Catalog();
@@ -100,6 +123,24 @@ var catalog = new Catalog();
 
         drawElevi();
         
+    }
+
+    function onClickSortAsc(){
+        catalog.sortAsc();
+        drawElevi();
+    }
+
+    function onClickSortDesc(){
+        catalog.sortDesc();
+        drawElevi();
+    }
+    function onClickSortNoteAsc(){
+        catalog.sortNoteAsc();
+        drawNote();
+    }
+    function onClickSortNoteDesc(){
+        catalog.sortNoteDesc();
+        drawNote();
     }
 
 

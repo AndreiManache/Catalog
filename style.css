@@ -62,3 +62,10 @@ h1{
 .invalid{
     border: 1px solid red;
 }
+
+.zone3 button {
+    margin-top: 40px;
+}
+.zone3{
+    margin-top: 40px;
+}
