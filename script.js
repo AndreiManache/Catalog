@@ -16,13 +16,20 @@ function hide(){
 
                 get medie(){
                     let sum = 0;
-                    if(this.note === []){
-                        return "";
+                    
+                    if(this.note.length === 0){
+                        return "Fara note";
                     }
-                    return sum;
-                }
-                
 
+                    for(let i = 0; i < this.note.length ; i++){
+
+                        sum += this.note[i];
+
+                    }
+
+                    return sum/this.note.length;
+                    
+                }
             }
 
         class Catalog{
@@ -50,15 +57,11 @@ var catalog = new Catalog();
 
     function onClickAddElev(e){
         e.preventDefault()
-
-            if(elev === ""){
-             document.querySelector("#numeElev").classList.add("invalid");
-            }
         
             var elev = document.querySelector("#numeElev").value;
             catalog.addElev(elev);
            
-            drawElevi()
+            drawElevi();
                 
             document.querySelector("#numeElev").value = "";
 
@@ -82,8 +85,13 @@ var catalog = new Catalog();
 
         e.preventDefault();
 
-        let nota = document.querySelector('.zone3 input').value;
+        let nota = parseInt(document.querySelector('.zone3 input').value);
 
+            if(nota === ""){
+              document.querySelector('.zone3 input').classList.add("invalid");
+              return false;
+            }
+            
         catalog.addNota(nota)
 
         drawNote();
