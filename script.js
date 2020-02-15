@@ -18,7 +18,7 @@ function hide(){
                     let sum = 0;
                     
                     if(this.note.length === 0){
-                        return "Fara note";
+                        return "n/a";
                     }
 
                     for(let i = 0; i < this.note.length ; i++){
@@ -26,8 +26,9 @@ function hide(){
                         sum += this.note[i];
 
                     }
-
-                    return sum/this.note.length;
+                    sum = sum/this.note.length;
+                    
+                    return sum.toFixed(2);
                     
                 }
             }
@@ -82,12 +83,15 @@ var catalog = new Catalog();
         e.preventDefault()
         
             var elev = document.querySelector("#numeElev").value;
-            catalog.addElev(elev);
-           
-            drawElevi();
-                
-            document.querySelector("#numeElev").value = "";
+            if(elev === ""){
+                return false;
+           }
 
+           catalog.addElev(elev);
+            drawElevi();
+           
+            document.querySelector("#numeElev").value = "";
+        
         }
 
 
@@ -107,13 +111,13 @@ var catalog = new Catalog();
     function onClickAddNota(e){
 
         e.preventDefault();
-
-        let nota = parseInt(document.querySelector('.zone3 input').value);
-
-            if(nota === ""){
+        if(document.querySelector('.zone3 input').value === ""){
               document.querySelector('.zone3 input').classList.add("invalid");
               return false;
             }
+        let nota = parseInt(document.querySelector('.zone3 input').value);
+
+            
             
         catalog.addNota(nota)
 
